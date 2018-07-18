@@ -2,9 +2,9 @@
 
 ## Node, Express, PostgreSQL
 
-Routes
+## **Routes**
 
-###/user/register
+## /user/register
 
 Paremeters<br>
 
