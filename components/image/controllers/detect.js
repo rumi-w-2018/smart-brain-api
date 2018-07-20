@@ -13,7 +13,7 @@ const detectFaces = (req, res) => {
 
   // eslint-disable-next-line no-new
   const clarifaiApp = new Clarifai.App({
-    apiKey: process.env.NODE_ENV_CLARIFAI_API_KEY
+    apiKey: process.env.CLARIFAI_API_KEY || process.env.NODE_ENV_CLARIFAI_API_KEY
   });
 
   clarifaiApp.models
