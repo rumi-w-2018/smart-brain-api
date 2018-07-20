@@ -23,7 +23,7 @@ const signIn = (req, res) => {
           .then(user => {
             res.status(successJson.statusCode).json({
               ...successJson,
-              data: user[0],
+              data: { id: user[0].id },
               message: 'Successfully signed in.',
               token: tokenForUser(user[0])
             });

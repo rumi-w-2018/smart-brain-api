@@ -34,8 +34,8 @@ const insertUser = (req, res) => {
           .then(user => {
             res.status(successJson.statusCode).json({
               ...successJson,
-              data: user[0],
               message: 'Successfully registered.',
+              data: { id: user[0].id },
               token: tokenForUser(user[0])
             });
           });

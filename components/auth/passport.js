@@ -12,13 +12,10 @@ const jwtOptions = {
 };
 
 const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
-  console.log('payload', payload);
-
   return db('users')
     .where('id', payload.id)
     .select('id')
     .then(userId => {
-      console.log('found', userId);
       // User found
       return done(null, userId);
     })

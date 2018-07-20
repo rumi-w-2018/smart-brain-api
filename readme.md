@@ -8,35 +8,29 @@
 
 Paremeters<br>
 
-- "email"
-- "name"
-- "password"
+- email
+- name
+- password
 
 Returns:
 
-- name
-- email
+- user id
 - token
 
 ## /user/signin
 
-- "email"
-- "password"
-
-Returns:
-
-- token
-- id
-- name
 - email
-- useagecount
-- joind (Date)
-
-## /user/image
-
-- "email"
-- "token"
+- password
 
 Returns:
 
-- usagecount(updated)
+- user id
+- token
+
+## /image
+
+- "email"
+
+Returns:
+
+- face recognition boxes

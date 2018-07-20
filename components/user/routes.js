@@ -24,7 +24,6 @@ router.post('/signin', signIn);
 router.post('/usage', (req, res) => {
   updateUsageCount(req)
     .then(result => {
-      console.log('promise reuslt', result);
       res.send('Success');
     })
     .catch(error => {
