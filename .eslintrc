@@ -83,7 +83,7 @@
     "implicit-arrow-linebreak": 0,
     "indent": "off",
     "indent-legacy": "off",
-    "init-declarations": "error",
+    "init-declarations": 0,
     "jsx-quotes": "error",
     "key-spacing": "off",
     "keyword-spacing": "off",

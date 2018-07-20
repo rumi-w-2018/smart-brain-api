@@ -9,8 +9,6 @@
 # production
 /build
 
-/config
-
 # misc
 .vscode
 .DS_Store

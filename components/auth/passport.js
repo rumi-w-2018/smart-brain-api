@@ -1,14 +1,13 @@
 //const passport = require('passport');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-const config = require('../../config/config');
-
 const { db } = require('../helpers/database');
+const config = require('../../config/config');
+const secret = config.secret;
 
 const jwtOptions = {
-  //jwtFromRequest: ExtractJwt.fromBodyField('token'),
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: config.secret
+  secretOrKey: secret
 };
 
 const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
