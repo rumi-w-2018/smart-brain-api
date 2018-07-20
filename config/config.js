@@ -1,5 +1,5 @@
 require('dotenv').config();
-const secret = process.env.NODE_ENV_SECRET || process.env.TOKEN_SECRET;
+const secret = process.env.TOKEN_SECRET || process.env.NODE_ENV_SECRET;
 
 module.exports = {
   secret
