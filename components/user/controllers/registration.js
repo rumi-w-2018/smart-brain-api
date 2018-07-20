@@ -1,7 +1,7 @@
-const { db } = require('../helpers/database');
+const { db } = require('../../helpers/database');
 const bcrypt = require('bcrypt-nodejs');
-const { tokenForUser } = require('../helpers/auth');
-const { errorJson, successJson } = require('../helpers/defaultResponses');
+const { tokenForUser } = require('../../auth/auth');
+const { errorJson, successJson } = require('../../helpers/defaultResponses');
 
 const insertUser = (req, res) => {
   const { email, name, password } = req.body;
@@ -25,7 +25,7 @@ const insertUser = (req, res) => {
       .returning('email')
       .then(loginEmail => {
         return trx('users') // 'returning the 2nd transaction' is important
-          .returning(['name', 'email']) // Insert and return the inserted user
+          .returning(['name', 'email', 'id']) // Insert and return the inserted user
           .insert({
             email: loginEmail[0],
             name: name,

@@ -1,7 +1,7 @@
-const { db } = require('../helpers/database');
+const { db } = require('../../helpers/database');
 const bycript = require('bcrypt-nodejs');
-const { tokenForUser } = require('../helpers/auth');
-const { errorJson, successJson } = require('../helpers/defaultResponses');
+const { tokenForUser } = require('../../auth/auth');
+const { errorJson, successJson } = require('../../helpers/defaultResponses');
 
 const signIn = (req, res) => {
   const { password, email } = req.body;
@@ -18,7 +18,7 @@ const signIn = (req, res) => {
     .then(data => {
       const isValid = bycript.compareSync(password, data[0].hash);
       if (isValid) {
-        return db('users')
+        return db('users') // Don't need transaction because it's just reading.
           .where('email', data[0].email)
           .then(user => {
             res.status(successJson.statusCode).json({

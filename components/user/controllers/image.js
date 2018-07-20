@@ -1,5 +1,27 @@
-const { db } = require('../helpers/database');
-const { errorJson, successJson } = require('../helpers/defaultResponses');
+const Clarifai = require('clarifai');
+const { db } = require('../../helpers/database');
+const { errorJson, successJson } = require('../../helpers/defaultResponses');
+
+const detectFaces = (req, res) => {
+  const { imageUrl } = req.body;
+  if (!imageUrl) {
+    // return Error
+    return;
+  }
+
+  // eslint-disable-next-line no-new
+  const clarifaiApp = new Clarifai.App({
+    apiKey: process.env.NODE_ENV_CLARIFAI_API_KEY
+  });
+  clarifaiApp.models.predict(Clarifai.GENERAL_MODEL, imageUrl).then(
+    response => {
+      console.log('response', response);
+    },
+    error => {
+      console.log('error', error);
+    }
+  );
+};
 
 const updateUsageCount = (req, callback) => {
   const { email } = req.body;

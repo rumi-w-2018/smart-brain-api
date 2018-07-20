@@ -1,9 +1,7 @@
-// Not used currently
 const { db } = require('../../helpers/database');
 
-const updateUsageCount = req => {
-  const { id } = req.body;
-
+const updateUsageCount = id => {
+  console.log('id', id);
   return new Promise((resolve, reject) => {
     db('users')
       .where('id', '=', id)
