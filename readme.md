@@ -2,11 +2,22 @@
 
 ## Node, Express, PostgreSQL
 
-## **Routes**
+## Functions
 
-## /user/register
+- User registration
+- User sign in
+- Face detection on pictures
+- User usage tracking
 
-Paremeters<br>
+## Demo
+
+The client application, <a href="https://rumi-w-2018.github.io/smart-brain/">smart-brain</a> demonstrates the use of this API.
+
+### **Routes**
+
+### 1) /user/register
+
+Paremeters:<br>
 
 - email
 - name
@@ -14,22 +25,26 @@ Paremeters<br>
 
 Returns:
 
-- user id
+- user ID
 - token
 
-## /user/signin
+### 2) /user/signin
+
+Paremeters:<br>
 
 - email
 - password
 
 Returns:
 
-- user id
+- user ID
 - token
 
-## /image
+### 3) /image
 
-- "email"
+Paremeters:<br>
+
+- "user ID"
 
 Returns:
 
