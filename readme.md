@@ -6,12 +6,21 @@
 
 - User registration
 - User sign in
-- Face detection on pictures
+- Face detection on pictures - Uses the capability provided by clarifai API (https://clarifai.com/).
 - User usage tracking
 
 ## Demo
 
-The client application, <a href="https://rumi-w-2018.github.io/smart-brain/">smart-brain</a> demonstrates the use of this API.
+The client application, <a href="https://rumi-w-2018.github.io/smart-brain/">smart-brain</a> demonstrates the use of this API. The information below can be used for demo.
+
+Log In
+
+- Email: demo@email.com
+- Password: apple
+
+Image URL
+
+- https://samples.clarifai.com/face-det.jpg
 
 ### **Routes**
 
